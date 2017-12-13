@@ -41,7 +41,7 @@ public:
             return true;
         if (value.size() > a.getValue().size())
             return false;
-        for (int i = value.size() - 1; i >= 0; i--)
+        for (int i = 0; i < value.size(); i++)
         {
             if (value[i] < a.getValue().at(i)) return true;
             if (value[i] > a.getValue().at(i)) return false;
