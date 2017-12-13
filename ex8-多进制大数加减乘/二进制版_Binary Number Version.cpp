@@ -20,7 +20,7 @@ private:
     //往后面塞零
     static string putZero(const string &a, int k)
     {
-        if(a == "0")
+        if (a == "0")
             return a;
         string res = a;
         for (int i = 0; i < k; i++)
@@ -192,11 +192,53 @@ public:
 
 int main()
 {
-    string str;
-    cin >> str;
-    BinNumber a(str);
-    cin >> str;
-    BinNumber b(str);
-    string ans = (a * b).getValue();
-    cout << ans << endl;
+    cout << "请选择运算类型： 1.加法 2.减法 3.乘法" << endl;
+    int choice;
+    while (cin >> choice)
+    {
+        switch (choice)
+        {
+            case 1:
+            {
+                cout << "输入被加数: ";
+                string str;
+                cin >> str;
+                BinNumber a(str);
+                cout << "输入加数: ";
+                cin >> str;
+                BinNumber b(str);
+                cout << "结果是:";
+                cout << (a + b).getValue() << endl;
+                break;
+            }
+            case 2:
+            {
+                cout << "输入被减数: ";
+                string str;
+                cin >> str;
+                BinNumber a(str);
+                cout << "输入减数: ";
+                cin >> str;
+                BinNumber b(str);
+                cout << "结果是:";
+                cout << (a - b).getValue() << endl;
+                break;
+            }
+            case 3:
+            {
+                cout << "输入被乘数: ";
+                string str;
+                cin >> str;
+                BinNumber a(str);
+                cout << "输入乘数: ";
+                cin >> str;
+                BinNumber b(str);
+                cout << "结果是:";
+                cout << (a * b).getValue() << endl;
+                break;
+            }
+            default:
+                cout<<"输入错误，请重新输入!"<<endl;
+        }
+    }
 }

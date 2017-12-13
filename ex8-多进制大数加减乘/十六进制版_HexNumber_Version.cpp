@@ -234,11 +234,53 @@ public:
 
 int main()
 {
-    string str;
-    cin >> str;
-    HexNumber a(str);
-    cin >> str;
-    HexNumber b(str);
-    string ans = (a * b).getValue();
-    cout << ans << endl;
+    cout << "请选择运算类型： 1.加法 2.减法 3.乘法" << endl;
+    int choice;
+    while (cin >> choice)
+    {
+        switch (choice)
+        {
+            case 1:
+            {
+                cout << "输入被加数: ";
+                string str;
+                cin >> str;
+                HexNumber a(str);
+                cout << "输入加数: ";
+                cin >> str;
+                HexNumber b(str);
+                cout << "结果是:";
+                cout << (a + b).getValue() << endl;
+                break;
+            }
+            case 2:
+            {
+                cout << "输入被减数: ";
+                string str;
+                cin >> str;
+                HexNumber a(str);
+                cout << "输入减数: ";
+                cin >> str;
+                HexNumber b(str);
+                cout << "结果是:";
+                cout << (a - b).getValue() << endl;
+                break;
+            }
+            case 3:
+            {
+                cout << "输入被乘数: ";
+                string str;
+                cin >> str;
+                HexNumber a(str);
+                cout << "输入乘数: ";
+                cin >> str;
+                HexNumber b(str);
+                cout << "结果是:";
+                cout << (a * b).getValue() << endl;
+                break;
+            }
+            default:
+                cout<<"输入错误，请重新输入!"<<endl;
+        }
+    }
 }
